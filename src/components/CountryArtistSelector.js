@@ -2,8 +2,8 @@ import React from 'react';
 
 const CountryArtistSelector = (props) => {
 
-  const countryOptions = props.countryArtists.map((countryArtist, index) => {
-    return <option value={index} key={index}>{countryArtist["im:name"].label}</option>
+  const countryOptions = props.countryartists.map((countryArtist, index) => {
+    return <option value={index} key={index}>{countryArtist.name}</option>
   });
 
   const handleChange = (event) => {
@@ -16,7 +16,7 @@ const CountryArtistSelector = (props) => {
       id="countryArtistSelector"
       defaultValue="default"
       onChange={handleChange}>
-      <option disabled value="default">Top 20</option>
+      <option disabled value="default">Hottest Country Tracks</option>
       {countryOptions}
     </select>
   );

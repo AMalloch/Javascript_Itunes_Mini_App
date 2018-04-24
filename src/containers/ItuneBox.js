@@ -1,6 +1,7 @@
 import React from 'react';
 import ArtistSelector from '../components/ArtistSelector'
 import CountryArtistSelector from '../components/CountryArtistSelector'
+import CountryArtist from '../components/CountryArtist'
 import Artist from '../components/Artist'
 
 class ItuneBox extends React.Component {
@@ -19,12 +20,9 @@ class ItuneBox extends React.Component {
     fetch("https://itunes.apple.com/gb/rss/topsongs/limit=20/json")
     .then(response => response.json())
     .then(json => this.setState({artists: json.feed.entry}));
-  }
-
-  componentDidMount(){
     fetch("https://rss.itunes.apple.com/api/v1/gb/apple-music/hot-tracks/country/25/explicit.json")
     .then(response => response.json())
-    .then(json => this.setState({countryArtists: json.feed.entry}));
+    .then(json => this.setState({countryArtists: json.feed.results}));
   }
 
   handleArtistSelected(index){
@@ -34,7 +32,7 @@ class ItuneBox extends React.Component {
 
   handleCountryArtistSelected(index){
     const CountrySelectedArtist = this.state.countryArtists[index];
-    this.setState({currentCountryArtist: selectedArtist});
+    this.setState({currentCountryArtist: CountrySelectedArtist});
   }
 
   render(){
@@ -47,7 +45,8 @@ class ItuneBox extends React.Component {
         />
         <Artist artist={this.state.currentArtist}/>
         <CountryArtistSelector
-          countryartist={this.handleCountryArtistSelected}
+          countryartists={this.state.countryArtists}
+          onCountryArtistSelect={this.handleCountryArtistSelected}
         />
         <CountryArtist countryartist={this.state.currentArtist}/>
       </div>
