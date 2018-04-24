@@ -6,10 +6,16 @@ const ArtistSelector = (props) => {
     return <option value={index} key={index}>{artist["im:name"].label}</option>
   });
 
+  const handleChange = (event) => {
+    let index = event.target.value;
+    props.onArtistSelect(index);
+  }
+
   return (
     <select
-      id="AmiiboSelect"
-      defaultValue="default">
+      id="ArtistSelector"
+      defaultValue="default"
+      onChange={handleChange}>
       <option disabled value="default">Top 20</option>
       {top20options}
     </select>
