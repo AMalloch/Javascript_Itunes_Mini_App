@@ -1,5 +1,8 @@
 body{
   font-family: Verdana, Arial, sans-serif;
+  background-image: url("./images/new_york_city_skyline_at_night-wallpaper-1280x800.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .itune-box{
@@ -9,11 +12,11 @@ body{
   padding: 10px;
   background: linear-gradient(blue, pink);
   box-shadow:
-  0 0 0 5px hsl(0, 0%, 50%),
-  0 0 0 7px hsl(0, 0%, 60%),
-  0 0 0 10px hsl(0, 0%, 70%),
-  0 0 0 13px hsl(0, 0%, 80%),
-  0 0 0 17px hsl(0, 0%, 90%);
+  0 0 0 3px hsl(0, 0%, 50%),
+  0 0 0 5px hsl(0, 0%, 60%),
+  0 0 0 8px hsl(0, 0%, 70%),
+  0 0 0 11px hsl(0, 0%, 80%),
+  0 0 0 15px hsl(0, 0%, 90%);
 }
 
 .artist-dropdown{
@@ -38,6 +41,37 @@ select{
   width:150px;
 }
 
+@keyframes title {
+    from {text-shadow: 0 0 40px pink;}
+    to {text-shadow: 0 0 5px black;}
+}
+
+h1{
+  font-size: 50px;
+  font-style: oblique;
+  color: white;
+  text-align: center;
+  animation-name: title;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-shadow: 0 0 5px pink;
+}
+
 h2{
   text-align: center;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-top: 20px;
+}
+
+h3{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  font-family: Arial, Helvetica, sans-serif;
 }

@@ -39,7 +39,8 @@ class ItuneBox extends React.Component {
   render(){
     return (
       <div className='itune-box'>
-        <h2>Itune's Top 20</h2>
+        <h1>iTunes</h1>
+        <h2>Top 20</h2>
         <ArtistSelector
         artists={this.state.artists}
         onArtistSelect={this.handleArtistSelected}
