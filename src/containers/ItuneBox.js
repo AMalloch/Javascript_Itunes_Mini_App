@@ -8,6 +8,7 @@ class ItuneBox extends React.Component {
   constructor(props){
     super(props);
     this.handleArtistSelected = this.handleArtistSelected.bind(this);
+    this.handleCountryArtistSelected = this.handleCountryArtistSelected.bind(this);
     this.state = {
       countryArtists: [],
       currentCountryArtist: null,
@@ -44,11 +45,12 @@ class ItuneBox extends React.Component {
         onArtistSelect={this.handleArtistSelected}
         />
         <Artist artist={this.state.currentArtist}/>
+        <h3>Hottest Country Tracks</h3>
         <CountryArtistSelector
           countryartists={this.state.countryArtists}
           onCountryArtistSelect={this.handleCountryArtistSelected}
         />
-        <CountryArtist countryartist={this.state.currentArtist}/>
+        <CountryArtist countryArtist={this.state.currentCountryArtist}/>
       </div>
     )
   };

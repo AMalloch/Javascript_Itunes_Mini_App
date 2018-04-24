@@ -6,7 +6,7 @@ const CountryArtistSelector = (props) => {
     return <option value={index} key={index}>{countryArtist.name}</option>
   });
 
-  const handleChange = (event) => {
+  const handleCountryChange = (event) => {
     let index = event.target.value;
     props.onCountryArtistSelect(index);
   }
@@ -15,7 +15,7 @@ const CountryArtistSelector = (props) => {
     <select
       id="countryArtistSelector"
       defaultValue="default"
-      onChange={handleChange}>
+      onChange={handleCountryChange}>
       <option disabled value="default">Hottest Country Tracks</option>
       {countryOptions}
     </select>
