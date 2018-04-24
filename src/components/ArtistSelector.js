@@ -19,7 +19,7 @@ const ArtistSelector = (props) => {
       <option disabled value="default">Top 20</option>
       {top20options}
     </select>
-  )
+  );
 }
 
 export default ArtistSelector;
