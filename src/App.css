@@ -42,7 +42,7 @@ select{
 }
 
 @keyframes title {
-    from {text-shadow: 0 0 50px pink;}
+    from {text-shadow: 0 0 50px red;}
     to {text-shadow: 0 0 5px black;}
 }
 
