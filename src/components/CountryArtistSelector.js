@@ -16,7 +16,7 @@ const CountryArtistSelector = (props) => {
       id="countryArtistSelector"
       defaultValue="default"
       onChange={handleCountryChange}>
-      <option disabled value="default">Hottest Country Tracks</option>
+      <option disabled value="default">Select a track</option>
       {countryOptions}
     </select>
   );

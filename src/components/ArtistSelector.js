@@ -16,7 +16,7 @@ const ArtistSelector = (props) => {
       id="ArtistSelector"
       defaultValue="default"
       onChange={handleChange}>
-      <option disabled value="default">Top 20</option>
+      <option disabled value="default">Select a track</option>
       {top20options}
     </select>
   );
