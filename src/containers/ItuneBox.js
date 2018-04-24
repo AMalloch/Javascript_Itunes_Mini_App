@@ -1,5 +1,6 @@
 import React from 'react';
 import ArtistSelector from '../components/ArtistSelector'
+import CountryArtistSelector from '../components/CountryArtistSelector'
 import Artist from '../components/Artist'
 
 class ItuneBox extends React.Component {
@@ -7,6 +8,8 @@ class ItuneBox extends React.Component {
     super(props);
     this.handleArtistSelected = this.handleArtistSelected.bind(this);
     this.state = {
+      countryArtists: [],
+      currentCountryArtist: null,
       artists: [],
       currentArtist: null
     };
@@ -18,9 +21,20 @@ class ItuneBox extends React.Component {
     .then(json => this.setState({artists: json.feed.entry}));
   }
 
+  componentDidMount(){
+    fetch("https://rss.itunes.apple.com/api/v1/gb/apple-music/hot-tracks/country/25/explicit.json")
+    .then(response => response.json())
+    .then(json => this.setState({countryArtists: json.feed.entry}));
+  }
+
   handleArtistSelected(index){
     const selectedArtist = this.state.artists[index];
     this.setState({currentArtist: selectedArtist});
+  }
+
+  handleCountryArtistSelected(index){
+    const CountrySelectedArtist = this.state.countryArtists[index];
+    this.setState({currentCountryArtist: selectedArtist});
   }
 
   render(){
@@ -32,6 +46,10 @@ class ItuneBox extends React.Component {
         onArtistSelect={this.handleArtistSelected}
         />
         <Artist artist={this.state.currentArtist}/>
+        <CountryArtistSelector
+          countryartist={this.handleCountryArtistSelected}
+        />
+        <CountryArtist countryartist={this.state.currentArtist}/>
       </div>
     )
   };
