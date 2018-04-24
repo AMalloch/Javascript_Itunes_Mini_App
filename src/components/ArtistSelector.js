@@ -12,7 +12,7 @@ const ArtistSelector = (props) => {
   }
 
   return (
-    <select
+    <select className='artist-dropdown'
       id="ArtistSelector"
       defaultValue="default"
       onChange={handleChange}>

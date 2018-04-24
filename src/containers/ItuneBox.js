@@ -1,8 +1,8 @@
 import React from 'react';
 import ArtistSelector from '../components/ArtistSelector'
+import Artist from '../components/Artist'
 import CountryArtistSelector from '../components/CountryArtistSelector'
 import CountryArtist from '../components/CountryArtist'
-import Artist from '../components/Artist'
 
 class ItuneBox extends React.Component {
   constructor(props){
@@ -38,14 +38,14 @@ class ItuneBox extends React.Component {
 
   render(){
     return (
-      <div>
-        <h3>Itune's Top 20</h3>
+      <div className='itune-box'>
+        <h2>Itune's Top 20</h2>
         <ArtistSelector
         artists={this.state.artists}
         onArtistSelect={this.handleArtistSelected}
         />
         <Artist artist={this.state.currentArtist}/>
-        <h3>Hottest Country Tracks</h3>
+        <h2>Hottest Country Tracks</h2>
         <CountryArtistSelector
           countryartists={this.state.countryArtists}
           onCountryArtistSelect={this.handleCountryArtistSelected}

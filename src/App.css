@@ -1,1 +1,43 @@
+body{
+  font-family: Verdana, Arial, sans-serif;
+}
 
+.itune-box{
+  width: 300px;
+  margin: 10px auto;
+  border: 1px solid black;
+  padding: 10px;
+  background: linear-gradient(blue, pink);
+  box-shadow:
+  0 0 0 5px hsl(0, 0%, 50%),
+  0 0 0 7px hsl(0, 0%, 60%),
+  0 0 0 10px hsl(0, 0%, 70%),
+  0 0 0 13px hsl(0, 0%, 80%),
+  0 0 0 17px hsl(0, 0%, 90%);
+}
+
+.artist-dropdown{
+  border-bottom: solid 1px #ccc;
+  border-top: solid 1px #ccc;
+  margin-top: 10px;
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+select{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 50%;
+  width:150px;
+}
+
+h2{
+  text-align: center;
+}
