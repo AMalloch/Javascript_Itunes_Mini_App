@@ -10,10 +10,10 @@ const Artist = (props) => {
         src={props.artist["im:image"][2].label}
         alt={props.artist["im:image"][2].label}/>
         <h3>
-          Title: {props.artist["im:name"].label}
+          Title: <a>{props.artist["im:name"].label}</a>
         </h3>
         <h3>
-          Artist: {props.artist["im:artist"].label}
+          Artist: <a>{props.artist["im:artist"].label}</a>
         </h3>
         <h3>
           <audio controls preload="none">

@@ -10,10 +10,10 @@ const CountryArtist = (props) => {
         src={props.countryArtist.artworkUrl100}
         alt={props.countryArtist.artworkUrl100}/>
         <h3>
-          Title: {props.countryArtist.name}
+          Title: <a>{props.countryArtist.name}</a>
         </h3>
         <h3>
-          Artist: {props.countryArtist.artistName}
+          Artist: <a>{props.countryArtist.artistName}</a>
         </h3>
       </article>
     )
